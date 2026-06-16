@@ -1,0 +1,164 @@
+/* ===== Fondo general con temática de restaurante ===== */
+.create-restaurant-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background:
+    linear-gradient(135deg, rgba(43, 24, 16, 0.85), rgba(74, 44, 28, 0.85)),
+    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  font-family: "Georgia", "Playfair Display", serif;
+}
+
+/* ===== Tarjeta (la "carta" del restaurante) ===== */
+.create-restaurant-container mat-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 2rem 1.75rem;
+  border-radius: 16px;
+  background: #fdf8f1;
+  border: 1px solid #e6d6bf;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== Título ===== */
+.create-restaurant-container mat-card-title {
+  text-align: center;
+  font-size: 1.9rem !important;
+  font-weight: 700;
+  color: #7a3b1d;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+/* Línea decorativa bajo el título */
+.create-restaurant-container mat-card-header {
+  display: block;
+  position: relative;
+  padding-bottom: 1.25rem;
+}
+.create-restaurant-container mat-card-header::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 0.75rem auto 0;
+  background: #c8862b;
+  border-radius: 2px;
+}
+
+/* ===== Formulario ===== */
+.create-restaurant-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.create-restaurant-container mat-form-field {
+  width: 100%;
+}
+
+/* El textarea de descripción se redimensiona solo en vertical */
+.create-restaurant-container textarea {
+  resize: vertical;
+}
+
+/* Colores de acento de Material (campos outline) */
+.create-restaurant-container ::ng-deep .mdc-notched-outline__leading,
+.create-restaurant-container ::ng-deep .mdc-notched-outline__notch,
+.create-restaurant-container ::ng-deep .mdc-notched-outline__trailing {
+  border-color: #c8862b;
+}
+.create-restaurant-container ::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline__leading,
+.create-restaurant-container ::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline__notch,
+.create-restaurant-container ::ng-deep .mat-mdc-form-field.mat-focused .mdc-notched-outline__trailing {
+  border-color: #7a3b1d;
+  border-width: 2px;
+}
+.create-restaurant-container ::ng-deep .mat-mdc-form-field.mat-focused .mat-mdc-floating-label {
+  color: #7a3b1d;
+}
+
+/* ===== Botones ===== */
+.create-restaurant-container button {
+  width: 100%;
+  margin-top: 0.5rem;
+  border-radius: 10px !important;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 0.4rem 0 !important;
+}
+
+/* Botón principal "Crear restaurante" */
+.create-restaurant-container button[type="submit"] {
+  background-color: #7a3b1d !important;
+  color: #fdf8f1 !important;
+}
+.create-restaurant-container button[type="submit"]:hover {
+  background-color: #5e2c14 !important;
+}
+
+/* Botón secundario "Volver" */
+.create-restaurant-container button[type="button"] {
+  background-color: transparent !important;
+  color: #7a3b1d !important;
+  border: 2px solid #c8862b !important;
+}
+.create-restaurant-container button[type="button"]:hover {
+  background-color: #f3e6d2 !important;
+}
+
+/* ===== Imagen preview ===== */
+.image-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.image-upload label {
+  color: #7a3b1d;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.image-upload input[type="file"] {
+  font-family: "Georgia", serif;
+  font-size: 0.9rem;
+  color: #5e2c14;
+  cursor: pointer;
+}
+
+.preview {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #e6d6bf;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  .create-restaurant-container {
+    padding: 1rem;
+    align-items: flex-start;
+    padding-top: 2rem;
+  }
+
+  .create-restaurant-container mat-card {
+    padding: 1.5rem 1.25rem;
+    max-width: 100%;
+  }
+
+  .create-restaurant-container mat-card-title {
+    font-size: 1.5rem !important;
+  }
+
+  .preview {
+    max-height: 160px;
+  }
+}

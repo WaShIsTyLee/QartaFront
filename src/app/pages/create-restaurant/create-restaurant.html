@@ -1,0 +1,37 @@
+<div class="create-restaurant-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Crear restaurante</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form [formGroup]="createRestaurantForm" (ngSubmit)="onSubmit()">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input matInput type="text" formControlName="name" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Descripción</mat-label>
+          <textarea matInput formControlName="description" rows="3"></textarea>
+        </mat-form-field>
+
+        <div class="image-upload">
+          <label for="logoInput">Logo del restaurante</label>
+          <input type="file" id="logoInput" accept="image/*" (change)="onImageSelected($event)" />
+          <img *ngIf="logoPreview" [src]="logoPreview" alt="Preview" class="preview" />
+        </div>
+
+        <button mat-raised-button color="primary" type="submit">
+          Crear restaurante
+        </button>
+
+        <button mat-button type="button" routerLink="/dashboard">
+          Volver
+        </button>
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

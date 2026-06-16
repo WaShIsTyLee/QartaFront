@@ -1,3 +1,30 @@
-<button mat-raised-button color="warn" (click)="onLogout()">
-  Cerrar sesión
-</button>
+<div class="dashboard-container">
+
+  <nav class="navbar">
+    <h1 class="logo">Qarta</h1>
+    <button mat-button (click)="onLogout()">Cerrar sesión</button>
+  </nav>
+
+  <div class="content">
+
+    <div *ngIf="loading" class="loading">
+      <p>Cargando...</p>
+    </div>
+
+    <div *ngIf="!loading && !hasRestaurant" class="no-restaurant">
+      <h2>Aún no tienes ningún restaurante</h2>
+      <p>Crea tu restaurante para empezar a gestionar tu carta digital.</p>
+      <button mat-raised-button color="primary" routerLink="/create-restaurant">
+        Crear restaurante
+      </button>
+    </div>
+
+ <div *ngIf="!loading && hasRestaurant" class="restaurant-card">
+  <img *ngIf="restaurant.logo" [src]="restaurant.logo" alt="Logo" class="restaurant-logo" />
+  <h2>{{ restaurant.name }}</h2>
+  <p>{{ restaurant.description }}</p>
+</div>
+
+  </div>
+
+</div>

@@ -11,10 +11,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { Dashboard } from './pages/dashboard/dashboard';
-
+import { RouterModule } from '@angular/router';
+import { CreateRestaurant } from './pages/create-restaurant/create-restaurant';
 
 @NgModule({
-  declarations: [App, Login, Register, Dashboard],
+  declarations: [App, Login, Register, Dashboard, CreateRestaurant],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,6 +25,8 @@ import { Dashboard } from './pages/dashboard/dashboard';
     MatButtonModule,
     MatFormFieldModule,
     MatCardModule,
+    RouterModule,
+    HttpClientModule,
   ],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
